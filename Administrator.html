@@ -1,0 +1,394 @@
+<!DOCTYPE html> 
+
+<html> 
+
+ <head> 
+
+   <meta charset="utf-8"> 
+
+   <title>Adminstrator</title> 
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link  rel="stylesheet" type="text/css" href="CssALL.css">
+   <link rel="stylesheet" href="admincss.css">  
+
+ </head> 
+
+ <body>  
+  
+	<header>
+	 <div id="logo">
+			<img src = "images/logo.jpg"  alt = "logo" width = "100" height = "100" >
+			<br/>
+		   </div>
+			<span id="menuBtn" onclick="openNav()" >☰ Menu</span> 
+			<a id="closeBtn" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		   <nav> 
+
+			 <ul class = "navbar">
+				<li class = "list"><a href="index.html" accessKey="h">Home</a></li> 
+		
+				<li class = "list"><a href="Courses.html" accessKey="c">Courses</a></li>
+		
+				<li class = "list"><a href="Administrator.html" accessKey="a">Administrator</a></li> 
+		
+				<li class = "list"><a href="parent.html" accessKey="p">Parent</a></li> 
+				
+				<li class = "list"><a href="Toutors.html" accessKey="t">Tutors</a></li> 
+				
+				</ul>   
+		 </nav>	
+
+	</header>
+	 
+	<div class="breadcrumb"> 
+		<a href="index.html">Home</a> &raquo; 
+		<a href="Administrator.html">Adminstrator</a> 
+		<hr>  
+	</div> 
+
+ 
+<div class="breadcrumb">  
+	<div id="date-range"> 
+	</div>
+    <hr>  
+</div> 
+
+ 
+
+ 
+<div class="course-container"> 
+
+ 
+
+ 
+
+  <div class="admin-container"> 
+
+  <h3>Resgistered student</h3>  
+
+  <div class="student">  
+
+ <ul class="adminlist"> 
+
+ <li> Ahmad Alnasser</li> 
+
+ <li> Ali Alnasser</li> 
+
+ <li> sara Alnasser</li> 
+
+ <li> omar Alnasser</li> 
+
+ <li>  Fahad alhabib</li> 
+
+ <li> shaden alturki</li> 
+
+ <li> alreem aleid </li> 
+
+ <li> saleh </li> 
+
+ <li> Amjd Alqaseem</li> 
+
+ <li> Ali Alnasser</li> 
+
+ <li> Ahmad Alnasser</li> 
+
+ <li> Ahmad Alnasser</li> 
+
+ <li> Ahmad Alnasser</li> 
+
+ <li> Ali Alnasser</li> 
+
+ <li> Ahmad Alnasser</li> 
+
+ <li> Ahmad Alnasser</li> 
+
+</ul> 
+
+  </div> 
+
+    </div> 
+
+   
+
+    
+
+     
+
+         
+
+      
+
+      <div class="tutors-container"> 
+
+        
+
+          <h2> Teachers </h2> 
+
+          <div class="teacher"> 
+
+            <h3><a class="linka" href="Schedual.html"> Lama Schedual </a></h3> 
+
+            <ul class="adminlist"> 
+
+              <li>Java</li> 
+
+              <li>Scratch</li> 
+
+              <li>Html</li> 
+
+              <li>Css Y</li> 
+
+              
+
+            </ul> 
+
+          </div> 
+
+          <div class="teacher"> 
+
+            <h3><a class="linka" href="Schedule2.html"> Malak Schedual </a></h3> 
+
+            <ul class="adminlist"> 
+
+              <li>ML</li> 
+
+              <li>Paython</li> 
+
+               
+
+            </ul> 
+
+          </div> 
+          
+
+          <div class="teacher"> 
+
+            <h3>sara</h3> 
+
+            <ul class="adminlist"> 
+
+              <li>Html</li> 
+
+              <li>Css Y</li> 
+
+             
+
+            </ul> 
+
+          </div> 
+
+          <div class="teacher"> 
+
+            <h3>Amal</h3> 
+
+            <ul class="adminlist">  
+
+              <li>html</li> 
+
+              <li>c++</li> 
+
+              <!-- Add more courses here --> 
+
+            </ul> 
+
+          </div> 
+
+         
+
+      </div> 
+
+    
+
+ 
+
+  <div class="coursesAdmin-container"> 
+
+    <h2> Courses </h2> 
+
+        <div class="T1C1"> 
+
+            <input id="ch" type="checkbox" onclick="showHide()"> 
+
+            <h4>Lama, Java</h4> 
+
+            <ul class="adminlist"> 
+
+                <li>Ali Alnasser</li> 
+
+                <li>Ahmad Alnasser</li> 
+
+            </ul> 
+
+            <div class="content" id="content"> 
+
+                <ul class="adminlist"> 
+
+                    <li>rooad</li> 
+
+                    <li>reem Alnasser</li> 
+
+                    <li>shaden alturky</li> 
+
+                </ul> 
+
+                <label for="ch">Show Less</label> 
+
+            </div> 
+
+            <label for="ch" id="label1">Show more</label> 
+
+        </div> 
+
+
+      
+             
+
+        <div class="T1C2"> 
+
+          <input id="ch2" type="checkbox" onclick="showHide2()"> 
+
+          <h4>Malak, HTML</h4> 
+
+          <ul class="adminlist"> 
+
+
+              <li>Ahmad Alnasser</li> 
+
+              <li>najd Alnasser</li> 
+
+          </ul> 
+
+          <div class="content2" id="content2"> 
+
+              <ul class="adminlist">  
+
+                  <li>rooad</li> 
+
+                  <li>reem Alnasser</li> 
+
+                  <li>shaden alturky</li> 
+
+              </ul> 
+
+              <label for="ch2">Show Less</label> 
+
+          </div> 
+
+          <label for="ch2" id="label2">Show more</label> 
+
+      </div> 
+      <div class="T1C3"> 
+      
+        <input id="ch3" type="checkbox" onclick="showHide3()"> 
+
+        <h4>najd, paython</h4> 
+
+        <ul class="adminlist"> 
+
+            <li>saleh alturki</li> 
+
+            <li>khaled alhabib</li> 
+
+        </ul> 
+
+        <div class="content3" id="content3"> 
+
+            <ul class="adminlist"> 
+
+                <li>rooad</li> 
+
+                <li>reem Alnasser</li> 
+
+                <li>shaden alturky</li> 
+
+            </ul> 
+
+            <label for="ch3">Show Less</label> 
+
+        </div> 
+
+        <label for="ch3" id="label3">Show more</label> 
+
+    </div> 
+
+    </div>
+
+</div>
+
+
+<footer>
+  <hr>
+  <h1 class="About"> About us</h1>
+  <p>little programmer was started in 2023 with a goal to create an educational engaging programming learning  platform for children. we encourage kids to love programming by teaching it in a joyful way.<br><br>
+   all Rights are reserved | 2023 little programmer </p>
+  <h2>ContactUs</h2>
+  <p><img src="images/ma.jpg" alt="mail" width="15" height="15">@mail.com <br>
+  <img src="images/te.jpg" alt="Telephone" width="15" height="15"> 052899120</p><br> <hr>
+</footer>
+
+</body>
+</html>
+<script src="script.js"></script>
+<script src="jsAll.js"></script>
+
+<script> 
+var ch1_cheked = false;
+function showHide(){
+	if(!ch1_cheked){
+		document.getElementById("content").style.display = 'block';
+		document.getElementById("label1").style.display = 'none'; 
+	}else{
+		document.getElementById("content").style.display = 'none';
+		document.getElementById("label1").style.display = 'block'; 
+	}
+	ch1_cheked = !ch1_cheked;
+    // hide the lorem ipsum text
+    //document.getElementById(text).style.display = 'none';
+
+}
+
+var ch2_cheked = false;
+function showHide2(){
+	if(!ch2_cheked){
+		document.getElementById("content2").style.display = 'block';
+		document.getElementById("label2").style.display = 'none'; 
+	}else{
+		document.getElementById("content2").style.display = 'none';
+		document.getElementById("label2").style.display = 'block'; 
+	}
+	ch2_cheked = !ch2_cheked; 
+
+}
+
+var ch3_cheked = false;
+function showHide3(){
+	if(!ch3_cheked){
+		document.getElementById("content3").style.display = 'block';
+		document.getElementById("label3").style.display = 'none'; 
+	}else{
+		document.getElementById("content3").style.display = 'none';
+		document.getElementById("label3").style.display = 'block'; 
+	}
+	ch3_cheked = !ch3_cheked;
+
+
+}
+
+var todayDate = new Date();   
+var firstDayOfWeek = todayDate.getDate() - todayDate.getDay();  
+var lastDayOfWeek = firstDayOfWeek + 6;  
+ 
+var startDate = new Date(todayDate.setDate(firstDayOfWeek));
+var endDate = new Date(todayDate.setDate(lastDayOfWeek));
+var currentDate = new Date();
+
+ 
+var startDateString = startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+var endDateString = endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+var currentDateString = currentDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); 
+ 
+var dateRange = '(' + startDateString + ' - ' + endDateString + ') Today is: '+currentDateString;
+document.getElementById('date-range').innerText = dateRange;
+</script>
+

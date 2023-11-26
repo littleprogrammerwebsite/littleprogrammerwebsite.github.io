@@ -1,0 +1,169 @@
+
+
+.abus{
+  margin-bottom: 89px;
+  top:-90px;
+margin-top: 510px;}
+
+
+
+       
+            .tutor-list {
+			
+             position: center;
+             width: 100%;
+             overflow: auto;
+             background-color:#768bb0;
+             white-space: nowrap;
+             min-height:10px;
+             border:1px solid navy;
+                    height: 0.1%;
+                    margin-bottom: 30%;		  
+			display: flex;
+			align-items: center;
+			justify-content:space-between;
+
+                    
+                }
+        
+              
+              
+         
+            
+
+        .tutor {
+          
+			 width: 300px;
+			 padding:100px;
+			 margin-bottom:100px;
+			 position:relative;
+			 top:10px;
+			background-color: #C7D4EA;
+			padding: 10px;
+			min-height:50px;
+            display: inline-block;
+            margin: 10px;
+            border: 4px solid black;
+		border-radius:3px;
+		
+  }
+
+.lll{
+
+  margin-bottom: 8px; 
+margin-top:10px;
+
+
+
+}
+.abb{
+ 
+  margin-bottom: 0px;
+  top:-900px;
+margin-top: 10000px; 
+}
+
+
+h1 {
+  text-align: center;
+}
+
+/* Form Styles */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 9px;
+}
+
+.course{ /* الكورسس*/
+  margin-left:-10pxx;
+    
+  background-color:#C7D4EA;
+   border:3px solid rgb(40, 52, 102);
+   
+   width: 590px;
+  height: 450px;
+
+}
+
+
+
+
+    
+    .kids-dropdown{
+margin-top: 88px;
+      top:290px;
+      left:180px;
+
+      
+    }
+  .cours1{ margin-top:-111px;
+  
+  line-height: 160px;
+  text-align: center;
+  font-family:serif;
+  margin-top: 0px;;
+
+
+}
+
+ 
+ 
+   
+   
+   
+  .button{
+    margin-top: 10px; 
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto; 
+	
+}
+
+ .button input[type="submit"]{
+	width: 100%;
+	height: 35px;
+	font-size: 16px;
+}
+
+
+  /* Custom Select Styles */
+.custom-select {
+	padding: 10px;
+	font-size: 11px; 
+	border-radius: 11px;
+	margin-left:4px;
+	margin-top:5px;
+	background-color: #768bb0;
+	width: 32%
+}
+
+.filtersRow{
+	width: 50%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+@media (max-width: 768px) {
+  .filtersRow{
+	  width:100%;
+  }
+  .custom-select {
+	width: 95%;
+  }
+  .course{
+	width: auto;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+   .tutor-list{
+		flex-direction: column;
+   }
+}
+

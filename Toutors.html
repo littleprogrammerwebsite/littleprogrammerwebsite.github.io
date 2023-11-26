@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+  <head>  
+    <title> Toutors </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="CssALL.css">
+	<link rel="stylesheet" href="cenrolment.Toutorscss.css">
+  </head>
+
+  <body>
+	<header>
+	 <div id="logo">
+			<img src = "images/logo.jpg"  alt = "logo" width = "100" height = "100" >
+			<br/>
+		   </div>
+			<span id="menuBtn" onclick="openNav()" >☰ Menu</span> 
+			<a id="closeBtn" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		   <nav> 
+
+			 <ul class = "navbar">
+				<li class = "list"><a href="index.html" accessKey="h">Home</a></li> 
+		
+				<li class = "list"><a href="Courses.html" accessKey="c">Courses</a></li>
+		
+				<li class = "list"><a href="Administrator.html" accessKey="a">Administrator</a></li> 
+		
+				<li class = "list"><a href="parent.html" accessKey="p">Parent</a></li> 
+				
+				<li class = "list"><a href="Toutors.html" accessKey="t">Tutors</a></li> 
+				
+				</ul>   
+		 </nav>	
+
+	</header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> &raquo;
+        <a href="Toutors.html">Toutor</a>
+        <hr>
+    </div>
+
+
+    <div class="breadcrumb">
+       Sort: 
+	   <select id="sortOpt" onchange="sortTutor()">
+			<option option="none">None</option>
+			<option option="A-Z">A-Z</option>
+			<option option="Z-A">Z-A</option>
+	   </select>
+        <hr>
+    </div>
+
+
+
+    <div class="tutor-list">
+	
+        <div class="tutor" id="t1">
+        
+            <div id="t2"></div><img src="images/t.jpg" alt="Tutor 1" width="120" height="160">
+            <h2>sara alhilaly</h2>
+            <p>Major:math</p>
+              
+        </div>
+
+        <div class="tutor">
+            <img src="images/O.jpg" alt="Tutor 2" width="120" height="160">
+            <h2>amera alolayan</h2>
+       <p>Major:physics</p>
+
+        </div>
+         <div class="tutor">
+            <img src="images/w.jpg" alt="Tutor 3" width="120" height="160">
+            <h2>reema alfahad</h2>
+            <p>Major:information technology</p>
+        </div>
+          <div class="tutor">
+            <img src="images/q.jpg" alt="Tutor 3" width="120" height="160">
+            <h2>Shaden almoussa</h2>
+            <p>Major:business mangment</p>
+        </div>
+          <div class="tutor">
+            <img src="images/v.jpg" alt="Tutor 3" width="120" height="160">
+            <h2>lulu alnasser</h2>
+            <p>Major:Coumputer Science</p>
+          </div>
+    
+  </div>
+
+
+  <footer>
+    <hr>
+    <h1 class="About"> About us</h1>
+    <p>little programmer was started in 2023 with a goal to create an educational engaging programming learning  platform for children. we encourage kids to love programming by teaching it in a joyful way.<br><br>
+     all Rights are reserved | 2023 little programmer </p>
+    <h2>ContactUs</h2>
+    <p><img src="images/ma.jpg" alt="mail" width="15" height="15">@mail.com <br>
+    <img src="images/te.jpg" alt="Telephone" width="15" height="15"> 052899120</p><br> <hr>
+  </footer>
+
+</body>
+</html>
+<script src="script.js"></script>
+<script src="jsAll.js"></script>
+
+<script>
+	function sortTutor(){
+		var option = document.querySelectorAll('#sortOpt');
+		var divs = document.querySelectorAll('.tutor'); 
+		var divArray = Array.from(divs);
+
+		if(sortOpt.value == "A-Z")
+		{ 
+			divArray.sort(function(a, b) {  
+			  var titleA = a.querySelector('h2').innerHTML .toUpperCase();
+			  var titleB = b.querySelector('h2').innerHTML .toUpperCase();
+			  if (titleA < titleB) {
+				return -1;
+			  }
+			  if (titleA > titleB) {
+				return 1;
+			  }
+			  return 0;
+			}); 
+			var parentElement = divs[0].parentNode;
+			divArray.forEach(function(div) {
+			  parentElement.appendChild(div);
+			});
+		}else if(sortOpt.value == "Z-A"){
+			divArray.sort(function(a, b) {  
+			  var titleA = a.querySelector('h2').innerHTML .toUpperCase();
+			  var titleB = b.querySelector('h2').innerHTML .toUpperCase();
+			  if (titleA < titleB) {
+				return 1;
+			  }
+			  if (titleA > titleB) {
+				return -1;
+			  }
+			  return 0;
+			}); 
+			var parentElement = divs[0].parentNode;
+			divArray.forEach(function(div) {
+			  parentElement.appendChild(div);
+			});
+		}
+	}
+	 
+</script>

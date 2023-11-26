@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title > parent </title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="CssALL.css">
+  <link rel =  "stylesheet" href= "Css.css" > 
+</head>
+
+<body>
+	<header>
+	 <div id="logo">
+			<img src = "images/logo.jpg"  alt = "logo" width = "100" height = "100" >
+			<br/>
+		   </div>
+			<span id="menuBtn" onclick="openNav()" >☰ Menu</span> 
+			<a id="closeBtn" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		   <nav> 
+
+			 <ul class = "navbar">
+				<li class = "list"><a href="index.html" accessKey="h">Home</a></li> 
+		
+				<li class = "list"><a href="Courses.html" accessKey="c">Courses</a></li>
+		
+				<li class = "list"><a href="Administrator.html" accessKey="a">Administrator</a></li> 
+		
+				<li class = "list"><a href="parent.html" accessKey="p">Parent</a></li> 
+				
+				<li class = "list"><a href="Toutors.html" accessKey="t">Tutors</a></li> 
+				
+				</ul>   
+		 </nav>	
+
+	</header>
+	
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> &raquo;
+        <a href="parent.html">parent</a>
+        <hr>
+    </div>
+
+    <!-- -->
+<div id = "flexbox-header" >
+    <h2> Current kids </h2> 
+</div>
+    
+    <div class = " flexbox" id="childrenDiv" > 
+				 
+
+                
+     </div>
+    
+
+
+ <div class ="control-button">
+    <form class="button" action="Add a new kid.html">
+        <button type="submit">Add a new kid </button>
+      </form>
+
+      <form class="button" action="Course enrollment.html">
+        <button type="submit">Course enrolment  </button>
+      </form>
+
+      <form class="button" action="Course evaluation.html">
+        <button type="submit">Course evalouation </button>
+      </form>
+</div>  
+
+
+        
+  
+
+<footer>
+  <hr>
+  <h1 class="About"> About us</h1>
+  <p>little programmer was started in 2023 with a goal to create an educational engaging programming learning  platform for children. we encourage kids to love programming by teaching it in a joyful way.<br><br>
+   all Rights are reserved | 2023 little programmer </p>
+  <h2>ContactUs</h2>
+  <p><img src="images/ma.jpg" alt="mail" width="15" height="15">@mail.com <br>
+  <img src="images/te.jpg" alt="Telephone" width="15" height="15"> 052899120</p><br> <hr>
+  </footer>
+
+           
+</body>
+</html>
+<script src="script.js"></script>
+<script src="jsAll.js"></script>
+
+<script>
+	
+const childrensObj = {}
+
+childrensObj[1] = {
+  id: 1,
+  name : "Ahmad alnasser", 
+  img : "images/kid1.jpg" 
+}
+
+childrensObj[2] = {
+  id: 2,
+  name : "Ali alnasser", 
+  img : "images/kid2.jpg" 
+}
+
+childrensObj[3] = {
+  id: 3,
+  name : "Sara alnasser", 
+  img : "images/kid3.png" 
+}
+
+//window.localStorage.clear();
+
+let savedChildren = window.localStorage.getItem("childrensObj"); 
+
+if(savedChildren == null)
+{
+	window.localStorage.setItem("childrensObj", JSON.stringify(childrensObj));
+}else{ 
+	var childs = JSON.parse(savedChildren);
+	var divBx = document.getElementById('childrenDiv');
+	var numberOfObjects = Object.keys(childs).length;
+	for(var i=1; i<=numberOfObjects; i++){ 
+		divBx.innerHTML += '<div class = "flexbox-items item'+i+'" ><div  ><p> '+childs[i].name+' </p> <img src="'+childs[i].img+'" alt="kid photo" width=100 height=100 ></div></div>'
+	}
+}
+
+</script>
+

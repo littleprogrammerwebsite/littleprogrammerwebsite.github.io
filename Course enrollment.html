@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> Course enrollment </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="CssALL.css">
+	<link rel="stylesheet" href="cenrolment.Toutorscss.css">
+</head> 
+
+<body>
+<header>
+ <div id="logo">
+        <img src = "images/logo.jpg"  alt = "logo" width = "100" height = "100" >
+		<br/>
+       </div>
+		<span id="menuBtn" onclick="openNav()" >☰ Menu</span> 
+		<a id="closeBtn" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+       <nav> 
+
+         <ul class = "navbar">
+            <li class = "list"><a href="index.html" accessKey="h">Home</a></li> 
+    
+            <li class = "list"><a href="Courses.html" accessKey="c">Courses</a></li>
+    
+            <li class = "list"><a href="Administrator.html" accessKey="a">Administrator</a></li> 
+    
+            <li class = "list"><a href="parent.html" accessKey="p">Parent</a></li> 
+            
+            <li class = "list"><a href="Toutors.html" accessKey="t">Tutors</a></li> 
+			
+            </ul>   
+     </nav>	
+
+</header>
+
+  
+	<div class="breadcrumb">
+		<a href="index.html">Home</a> &raquo;
+		<a href="parent.html">parent</a>  &raquo;
+		<a href="Course enrollment.html">Course enrollment</a>
+		<hr>
+
+	</div>
+
+    
+
+     
+    <div class="filtersRow">  
+        <div class="filter"> 
+            <!-- Dropdown for kids -->
+            <label for="kids-dropdown"></label>
+            <select id="kids-dropdown" class="custom-select">  
+                    <option value=""> Select A Kid</option> 
+            </select>
+        
+            <!-- Dropdown for filtering by tutor -->
+            <label for="tutor-filter"></label>
+            <select id="tutor-filter" class="custom-select" onChange="filterCoursesByTutor()">
+                    <option value=""> filter Tutor</option>  
+            </select>
+        
+            <!-- Dropdown for filtering by prerequisite course -->
+               
+            <label for="prerequisite-filter"></label>
+            <select id="prerequisite-filter" class="custom-select" onChange="filterCoursesByPrerequisite()">                 
+                    <option value="prereq2">filter Prerequisite</option>
+            </select> 
+        </div>
+	</div>
+     
+	<form onsubmit="return false;">  
+		<div class="course">
+			<div class="course2"><br>
+			<div id="information"></div> 
+			
+				<div class="cours1" id="coursesList">
+				<!--
+					<input type="checkbox" id="vehicle1" name="vehicle1" value="Course1"><label for="vehicle1"> Python </label><img src="images/python.png" alt="Course1" width="100" height="50"> 
+					<input type="checkbox" id="vehicle2" name="vehicle2" value="Course2"><label for="vehicle2"> Html</label><img src="images/html.png" alt="Course2" width="100" height="50"> 
+					<input type="checkbox" id="vehicle3" name="vehicle3" value="Course3"><label for="vehicle3"> R </label><img src="images/r.png" alt="Course3" width="100" height="50"><br>
+				 
+					<input type="checkbox" id="vehicle4" name="vehicle4" value="Course4"><label for="vehicle4">  Scratch </label><img src="images/scratch.jpeg" alt="Course4" width="100" height="50"> 
+					<input type="checkbox" id="vehicle5" name="vehicle5" value="Course5"><label for="vehicle5">  swift   </label><img src="images/swift.png" alt="Course5" width="100" height="50"> 
+					<input type="checkbox" id="vehicle6" name="vehicle6" value="Course6"><label for="vehicle6"> Css </label><img src="images/css.png" alt="Course6" width="100" height="50"><br>
+					<input type="checkbox" id="vehicle7" name="vehicle7" value="Course7"><label for="vehicle7"> Javascript </label><img src="images/js.jpeg" alt="Course7" width="100" height="50"> 
+					<input type="checkbox" id="vehicle8" name="vehicle8" value="Course8"><label for="vehicle8"> Sql </label><img src="images/sql.jpg" alt="Course8" width="100" height="50"> 
+					<input type="checkbox" id="vehicle9" name="vehicle9" value="Course9"><label for="vehicle3"> java </label><img src="images/java.png" alt="Course9" width="100" height="50">
+				-->
+				</div>
+			</div>
+		</div>
+	  <div class="button"> <input type="submit" value="submit" onclick="submitForm()"></div>
+	  
+	</form> 
+ 
+  <footer>
+    <hr>
+    <h1 class="About"> About us</h1>
+    <p>little programmer was started in 2023 with a goal to create an educational engaging programming learning  platform for children. we encourage kids to love programming by teaching it in a joyful way.<br><br>
+     all Rights are reserved | 2023 little programmer </p>
+    <h2>ContactUs</h2>
+    <p><img src="images/ma.jpg" alt="mail" width="15" height="15">@mail.com <br>
+    <img src="images/te.jpg" alt="Telephone" width="15" height="15"> 052899120</p><br> <hr>
+  </footer>
+</body>
+</html>
+<script src="script.js"></script>
+<script src="jsAll.js"></script>
+
+<script>
+// load childrens data from localStorage
+let savedChildren = window.localStorage.getItem("childrensObj"); 
+
+if(savedChildren != null)
+{ 
+	var childs = JSON.parse(savedChildren);
+    var kidsFilter = document.getElementById('kids-dropdown');
+	var numberOfObjects = Object.keys(childs).length;
+	for(var i=1; i<=numberOfObjects; i++){ 
+      var option = document.createElement('option');
+      option.text = childs[i].name;
+      kidsFilter.add(option);
+	}
+}
+
+
+
+	// Multidimensional array for courses
+var courses = [
+  {id:"1", course: 'Python', tutor: 'Dr. Lama', prerequisite: 'Java', img: 'images/python.png'},
+  {id:"2",  course: 'HTML', tutor: 'Dr. Sara', prerequisite: 'None', img: 'images/html.png' },
+  {id:"3",  course: 'R', tutor: 'Dr. Lames', prerequisite: 'Python', img: 'images/r.png' },
+  {id:"4",  course: 'Scratch', tutor: 'Dr. Lames', prerequisite: 'None', img: 'images/scratch.jpeg' },
+  {id:"5",  course: 'swift', tutor: 'Dr. Lames', prerequisite: 'Java', img: 'images/swift.png' },
+  {id:"6",  course: 'Css', tutor: 'Dr. Sara', prerequisite: 'HTML', img: 'images/css.png' },
+  {id:"7",  course: 'Javascript ', tutor: 'Dr. Lama', prerequisite: 'HTML', img: 'images/js.jpeg' },
+  {id:"8",  course: 'Sql', tutor: 'Dr. Lames', prerequisite: 'Java', img: 'images/sql.jpg' },
+  {id:"9",  course: 'Java', tutor: 'Dr. Sara', prerequisite: 'None', img: 'images/java.png' }
+];
+
+
+// Function to fill filter options
+function fillFilterOptions() {
+  var tutorFilter = document.getElementById('tutor-filter');
+  var prerequisiteFilter = document.getElementById('prerequisite-filter');
+
+  var tutors = [];
+  var prerequisites = [];
+
+  // Loop through the courses array to get unique tutors and prerequisites
+  courses.forEach(function(course) {
+    if (!tutors.includes(course.tutor)) {
+      tutors.push(course.tutor);
+      var option = document.createElement('option');
+      option.text = course.tutor;
+      tutorFilter.add(option);
+    }
+
+    if (!prerequisites.includes(course.prerequisite) && course.prerequisite !== 'None') {
+      prerequisites.push(course.prerequisite);
+      var option = document.createElement('option');
+      option.text = course.prerequisite;
+      prerequisiteFilter.add(option);
+    }
+  });
+}
+
+// Function to filter courses based on selected tutor 
+function filterCoursesByTutor() {
+  var tutorFilter = document.getElementById('tutor-filter'); 
+  var selectedTutor = tutorFilter.value; 
+
+  var filteredCourses = courses.filter(function(course) {
+    return (course.tutor === selectedTutor);
+  });
+  
+  var courseList = document.getElementById('coursesList');
+  courseList.innerHTML = '';  
+  filteredCourses.forEach(function(course) {
+    courseList.innerHTML += '<input type="checkbox" id="course" name="course" value="'+course.id+'"><label for="c'+course.id+'"> '+course.course+' </label><img src="'+course.img+'" alt="Course1" width="100" height="50">';
+     
+  });
+}
+
+// Function to filter courses based on selected prerequisite
+function filterCoursesByPrerequisite() { 
+  var prerequisiteFilter = document.getElementById('prerequisite-filter'); 
+  var selectedPrerequisite = prerequisiteFilter.value;
+
+  var filteredCourses = courses.filter(function(course) {
+    return (course.prerequisite === selectedPrerequisite);
+  });
+
+  var courseList = document.getElementById('coursesList');
+  courseList.innerHTML = '';
+
+  filteredCourses.forEach(function(course) {
+    courseList.innerHTML += '<input type="checkbox" id="course" name="course" value="'+course.id+'"><label for="c'+course.id+'"> '+course.course+' </label><img src="'+course.img+'" alt="Course1" width="100" height="50">';
+     
+  });
+}
+ 
+function submitForm() { 
+  var childOption = document.getElementById('kids-dropdown'); 
+  var courseInputs = document.querySelectorAll('#course');
+  
+  if (childOption.value === '') {
+    alert('Please select a kid.');
+    return;
+  }
+
+  var selectedCourses = [];
+  for (var i = 0; i < courseInputs.length; i++) {
+    if (courseInputs[i].checked) {
+      selectedCourses.push(courseInputs[i].value);
+    }
+  }
+
+  // Check if no courses are selected
+  if (selectedCourses.length === 0) {
+    alert('Please select at least one course.');
+    return;
+  }
+
+  // Display the information on the page
+  var childName = childOption.value;
+  var information = document.getElementById('information');
+  information.innerHTML = '';
+  var heading = document.createElement('h2');
+  heading.textContent = 'Information';
+  var childNameParagraph = document.createElement('p');
+  childNameParagraph.textContent = 'Kid Name: ' + childName;
+  var coursesParagraph = document.createElement('p');
+  coursesParagraph.textContent = 'Selected Courses:';
+  var courseList = document.createElement('ul');
+  selectedCourses.forEach(function(course) {
+		var listItem = document.createElement('li'); 
+		var selectedCourse = courses.filter(function(c) {
+			return (c.id == course);
+		  }); 
+		listItem.textContent = selectedCourse[0].course + " - Tutor: " + selectedCourse[0].tutor;
+		courseList.appendChild(listItem);
+  });
+
+  information.appendChild(heading);
+  information.appendChild(childNameParagraph);
+  information.appendChild(coursesParagraph);
+  information.appendChild(courseList);
+ 
+  courseInputs.forEach(function(courseInput) {
+    courseInput.checked = false;
+  });
+}
+
+// Fill filter options when the page loads
+fillFilterOptions();
+</script>
+

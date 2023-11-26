@@ -1,0 +1,312 @@
+.courseevaluation {margin: 2%;  
+  height: 100%;  
+
+  width: 95%;  
+
+  border: 3px solid black ;  
+
+  background-color: #768bb0; 
+
+  align-items: right; 
+
+  position: flex;   
+
+} 
+
+ 
+
+#coursesh{  
+  font-size: 75%; 
+
+  background-color: #768bb0; 
+
+  position: flex;  
+
+  height: 7%;  
+
+  width: 20%; 
+
+ } 
+
+ 
+
+.coursesh{ 
+
+  margin-bottom: 4%; 
+
+  margin-left: 4%; 
+
+  margin-top: 4%; 
+
+  height: 200%;   
+ 
+  border: 3px solid black ;  
+
+  background-color: #C7D4EA; 
+
+  text-align: center; 
+
+  font-size: 150%; 
+
+} 
+
+ 
+
+.feedback{ 
+
+  margin-bottom: 0; 
+
+  margin-left: 4%; 
+
+  height: 200%;    
+
+  border: 3px solid black ;  
+
+  background-color: #C7D4EA; 
+
+  text-align: center; 
+
+  font-size: 150%; 
+
+} 
+
+ 
+
+.message{   
+
+  display: flex; 
+
+  margin-top:0; 
+
+  margin-bottom: 4%; 
+
+  margin-left: 4%; 
+
+  height: 200%;    
+
+  border: 3px solid black;  
+
+} 
+
+ 
+
+.rate {   
+    width: 100%; 
+    height: 40%; 
+	text-align: center; 
+    font-size: 200%;
+  
+   
+} 
+
+
+
+
+ 
+
+.rate:not(:checked) > input { 
+
+    position:absolute; 
+
+    top:-100000%; 
+
+} 
+
+.rate:not(:checked) > label { 
+
+    float:right; 
+
+    width:1em; 
+
+    overflow:hidden; 
+
+    white-space:nowrap; 
+
+    cursor:pointer; 
+
+    font-size:200%; 
+
+    color:#ccc; 
+
+} 
+
+.rate:not(:checked) > label:before { 
+
+    content: '★ '; 
+
+
+} 
+
+.rate > input:checked ~ label { 
+
+    color: #ffc700;     
+
+} 
+
+.rate:not(:checked) > label:hover, 
+
+.rate:not(:checked) > label:hover ~ label { 
+
+    color: #deb217;   
+
+} 
+
+.rate > input:checked + label:hover, 
+
+.rate > input:checked + label:hover ~ label, 
+
+.rate > input:checked ~ label:hover, 
+
+.rate > input:checked ~ label:hover ~ label, 
+
+.rate > label:hover ~ input:checked ~ label { 
+
+    color: #c59b08; 
+
+} 
+
+ 
+
+#submit{ 
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+} 
+
+ 
+
+form { 
+
+  max-width: 100%; 
+
+  margin-bottom: 5%; 
+
+  margin-top: 3%; 
+
+  margin-left: 1%; 
+
+  padding: 2%;  
+
+  background-color: #768bb0; 
+
+  border-radius: 1%; 
+
+  font-size: 110%; 
+
+  font-weight: bold; 
+
+ 
+
+} 
+
+ 
+
+legend { 
+
+  font-weight: bold; 
+
+  font-size: 150%; 
+
+} 
+
+ 
+
+.addlist { 
+
+  list-style-type: none; 
+
+  padding: 0; 
+
+} 
+
+ 
+
+label,h4 { 
+
+  font-weight: bold; 
+
+  color:black; 
+
+} 
+
+ 
+
+input[type="text"], 
+
+input[type="date"], 
+
+input[type="email"], 
+
+input[type="tel"], 
+
+ 
+
+select { 
+
+  width: 95%; 
+
+  padding: 1%; 
+
+  border: 1px solid #ccc; 
+
+  border-radius: 1%; 
+
+} 
+
+ 
+
+input[type="radio"] { 
+
+  margin-right: 1%; 
+
+} 
+
+ 
+
+input[type="submit"] { 
+
+	background: #C7D4EA;  
+	color: black;  
+	border: none;  
+	padding: 10px 20px;  
+	border-radius: 5px; 
+	cursor: pointer; 
+	width: 100%;
+	color: black;
+	font-weight: bold;
+} 
+
+ 
+
+input[type="submit"]:hover { 
+
+  background: #4f6288; 
+
+} 
+
+.col50{
+	width:49%;
+	float: left;
+}
+
+
+.rateRow{
+
+	margin-left: auto;
+	margin-right: 10%;
+ 
+  
+}
+
+
+@media (max-width: 768px) {
+
+	.rateRow{
+		width: 100%; 
+
+
+
+	}
+	.col50{
+		width:100% }}

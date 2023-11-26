@@ -1,0 +1,277 @@
+<!DOCTYPE html> 
+
+<html> 
+
+ <head> 
+
+   <meta charset="utf-8"> 
+
+   <title>Add a new kid</title> 
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="CssALL.css">
+	<link rel="stylesheet" href="Evaluation&AddKid.css">  
+
+ </head> 
+
+ <body> 
+	
+	<header>
+	 <div id="logo">
+			<img src = "images/logo.jpg"  alt = "logo" width = "100" height = "100" >
+			<br/>
+		   </div>
+			<span id="menuBtn" onclick="openNav()" >☰ Menu</span> 
+			<a id="closeBtn" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		   <nav> 
+
+			 <ul class = "navbar">
+				<li class = "list"><a href="index.html" accessKey="h">Home</a></li> 
+		
+				<li class = "list"><a href="Courses.html" accessKey="c">Courses</a></li>
+		
+				<li class = "list"><a href="Administrator.html" accessKey="a">Administrator</a></li> 
+		
+				<li class = "list"><a href="parent.html" accessKey="p">Parent</a></li> 
+				
+				<li class = "list"><a href="Toutors.html" accessKey="t">Tutors</a></li> 
+				
+				</ul>   
+		 </nav>	
+
+	</header>
+   
+
+<div class="breadcrumb"> 
+
+    <a href="index.html">Home</a> &raquo; 
+
+    <a href="parent.html">Parent</a>  &raquo; 
+
+    <a href="Add a new kid.html">add a new kid</a> 
+
+<hr> 
+
+</div> 
+
+ 
+
+
+<form  method="post" onsubmit = "return  myValidation();" id="form">  
+  
+	<fieldset> 
+
+   <legend>Kid Information</legend> 
+      <ul> 
+<div id="addlist" >
+     <li> <label>kid's name: <input type="text" name="firstname" id="firstname" ></label> </li> <br>
+
+     <li> <label>kid's picture: <input type="file" id="myFile" name="filename"> </li> 
+      <img id="img_LocStor" width="150" />
+
+     <li> <label>Gender:  
+     <input type="radio" name="Gender" value="Male" id="male" > Male 
+     <input type="radio" name="Gender" value="Female" id="female" > Female 
+     </label> 
+     </li> <br>
+
+     <li> <label>Birthday: <input type="date" name="birthday" id="dob"></label> </li> <br>
+
+     <li> <label>Telephone: <input type="tel" name="Telephone" placeholder="05########"  id="phone"></label> </li> <br>
+
+     <li> <label>Email: <input type="email" name="email"  id="email"></label> </li> <br>
+
+     <li> <input type="submit" value="Rejester"> </li> 
+
+   </ul> 
+</div>
+
+</fieldset>  
+</form> 
+
+
+ <div id="formContent" style="display:none">
+  <fieldset> 
+
+   <legend>Kid Information</legend> 
+     <li> <img id="_img" width="150" /></li> 
+     <li> <b>kid's name:</b> <span id="_firstname" ></span> </li> 
+     <li> <b>Gender:</b> <span id="_gender" ></span> </li> 
+     <li> <b>Birthday:</b> <span id="_dob" ></span> </li> 
+     <li> <b>Telephone:</b> <span id="_phone" ></span> </li> 
+     <li> <b>Email:</b> <span id="_email" ></span> </li>  
+
+   </ul> 
+
+</fieldset> 
+</div>
+
+<footer>
+    <hr>
+    <h1> About us</h1>
+    <p>little programmer was started in 2023 with a goal to create an educational engaging programming learning  platform for children. we encourage kids to love programming by teaching it in a joyful way.<br><br>
+     all Rights are reserved | 2023 little programmer </p>
+    <h2>ContactUs</h2>
+    <p><img src="images/ma.jpg" alt="mail" width="15" height="15">@mail.com <br>
+    <img src="images/te.jpg" alt="Telephone" width="15" height="15"> 052899120</p><br> <hr>
+</footer> 
+
+   
+</body>
+</html>
+<script src="script.js"></script>
+<script src="jsAll.js"></script>
+
+
+	<script> 
+		function myValidation()
+		{
+			var firstname = document.getElementById("firstname").value;
+			var phone = document.getElementById("phone").value;
+			var dob = document.getElementById("dob").value;
+			var email = document.getElementById("email").value; 
+		   
+			var _firstname = document.getElementById("_firstname");
+			var _phone = document.getElementById("_phone");
+			var _dob = document.getElementById("_dob");
+			var _email = document.getElementById("_email");
+
+			
+		   if(Date.parse("01/01/2017 12:00:00 AM") < Date.parse(dob)){
+			   alert("Date of birth should NOT be after 2017");
+			  return false;
+			}
+			
+		   if(firstname == "")
+		   { 
+			  alert("You must set first name"); 
+			  return false;
+		   }
+		   var namePattern = /^[A-Za-z]\w*$/;
+		   if(!firstname.match(namePattern))
+		   { 
+			  alert("Name is incorrect");
+			  return false;
+		   }
+		   
+		   _firstname.innerText = firstname;
+		   
+		   var selectedGender = "0";
+           const radioButtons = document.querySelectorAll('input[name="Gender"]');
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedGender = radioButton.value;
+                    break;
+                }
+            }
+			
+		   if(selectedGender == "0")
+		   {
+			  alert("You must specifiy your gender"); 
+			  return false;		   
+		   } 
+		    
+		   _gender.innerText = selectedGender;
+		   if(dob == "")
+		   { 
+			  alert("You must set your date of birth");
+			  return false;
+		   }
+		    
+			
+		   
+		   if(Date.parse("01/01/2017 12:00:00 AM") < Date.parse(dob)){
+			   alert("Date of birth must be after 2017");
+			  return false;
+			}
+
+		   _dob.innerText = dob;
+			
+		   if(phone == "") 
+		   { 
+			  alert("You must set your phone");
+			  return false;
+		   }
+		   
+		   var phonePattern = /^\d{10}$/;
+		   
+		   if(!phone.match(phonePattern))
+		   { 
+			  alert("Phone Must be 10 digits");
+			  return false;
+		   }
+		   
+		   _phone.innerText = phone;
+		   
+		   if(email == "") 
+		   { 
+			  alert("You must set your email");
+			  return false;
+		   }
+		    
+		   _email.innerText = email;
+		   
+		   
+		   var file = document.getElementById("myFile");  
+		   if(file.files.length == 0 ) 
+		   { 
+			  alert("You must select an image");
+			  return false;
+		   }
+		   
+		    
+			var childs; 
+			let savedChildren = window.localStorage.getItem("childrensObj"); 
+			var numberOfObjects = 0;
+			if(savedChildren != null){
+				childs = JSON.parse(savedChildren);
+				numberOfObjects = Object.keys(childs).length;
+			}
+			var childrensObj = {
+			  id: (numberOfObjects+1),
+			  name : firstname, 
+			  img : "images/kid1.jpg" 
+			} 
+			
+			childs[numberOfObjects+1] = childrensObj;
+			window.localStorage.setItem("childrensObj", JSON.stringify(childs));
+			alert("child's data saved in LocalStorage");
+			
+			 printDivContent();
+			 return true;
+		}
+		
+		const imageInput = document.getElementById('myFile'); 
+		imageInput.addEventListener('change', event => { 
+		  const image = event.target.files[0];
+		  const reader = new FileReader();
+
+		  reader.addEventListener('load', () => {
+			localStorage.setItem('image', reader.result);
+		  });
+
+		  if (image) {
+			reader.readAsDataURL(image);
+		  }
+ 
+		  const newImage = document.getElementById(
+			'img_LocStor',
+		  );
+		  const _img = document.getElementById('_img');
+		  newImage.src = localStorage.getItem('image');
+		  _img.src = localStorage.getItem('image');
+		 
+		});
+		
+function printDivContent() { 
+	var divContents = document.getElementById("formContent").innerHTML; 
+	var a = window.open('', '', 'height=800, width=800'); 
+	a.document.write('<html>'); 
+	a.document.write('<body > '); 
+	a.document.write(divContents); 
+	a.document.write('</body></html>'); 
+	a.document.close(); 
+	a.print();
+	window.print(divContent);
+}
+	</script>
